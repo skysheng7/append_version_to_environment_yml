@@ -1,7 +1,7 @@
 """Library of functions used to append package versions in environment.yml files 
 
    Example command line usage: 
-   python scripts/00-update_enviroment_yml.py --root_dir="." --env_name="ai_env"
+   python update_enviroment_yml.py --root_dir="." --env_name="ai_env" --yml_name="environment.yml"
    
 """
 
@@ -102,6 +102,12 @@ def update_environment_yml(env_name, yml_file="./environment.yml"):
     type=str,
     help="Name of your conda virtual environment. Default is `ai_env`",
 )
+@click.option(
+    "--yml_name",
+    default="environment.yml",
+    type=str,
+    help="Name of the yml file recording packages you installed in your conda environment. Default is `environment.yml`",
+)
 def main(root_dir, env_name):
     """grab environment.yml, and add version numbers after each package"""
 
@@ -110,7 +116,7 @@ def main(root_dir, env_name):
         root_dir = "."
 
     # using the functions
-    yml_path = Path(root_dir) / "environment.yml"
+    yml_path = Path(root_dir) / yml_name
     update_environment_yml(env_name, yml_path)
 
 
