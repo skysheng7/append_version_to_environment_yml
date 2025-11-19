@@ -108,7 +108,7 @@ def update_environment_yml(env_name, yml_file="./environment.yml"):
     type=str,
     help="Name of the yml file recording packages you installed in your conda environment. Default is `environment.yml`",
 )
-def main(root_dir, env_name):
+def main(root_dir, env_name, yml_name):
     """grab environment.yml, and add version numbers after each package"""
 
     # in case anyone just entered "" to indicate it's root directory
