@@ -12,5 +12,5 @@ This repository contains a Python script that automatically adds version numbers
 ```
 3. Run the script (replace `ai_env` with your environment name if different):
 ```
-   python update_enviroment_yml.py --root_dir="." --env_name="ai_env"
+   python update_enviroment_yml.py --root_dir="." --env_name="ai_env" --yml_name="environment.yml"
 ```
