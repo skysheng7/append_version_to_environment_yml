@@ -114,8 +114,7 @@ def update_environment_yml(env_name, yml_file="./environment.yml"):
     env_data["dependencies"] = updated_dependencies
     with open(yml_file, "w") as f:
         yaml.dump(env_data, f, sort_keys=False)
-
-    print(f"Updated {yml_file} with versions from the {env_name} environment.")
+        print(f"Updated {yml_file} with versions from the {env_name} environment.")
 
 
 @click.command()
